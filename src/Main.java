@@ -6,7 +6,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         int MAX_RANDOM_NUMBER = 10;
-        int AMOUNT_OF_NUMBERS = 15;
+        int AMOUNT_OF_NUMBERS = 10;
         ArrayList<Integer> randomList = getRandomList(MAX_RANDOM_NUMBER, AMOUNT_OF_NUMBERS);
         HashMap<Integer, Integer> uniqueMap = new HashMap<>();
         getHashMap(randomList, uniqueMap);
@@ -23,7 +23,6 @@ public class Main {
 
     static int findHighestUnique(HashMap<Integer, Integer> map, int max ){
         int highestValue = 0;
-
 
         for (int i = max; i >= 0; i--){
             if (map.containsKey(i)){
@@ -55,7 +54,7 @@ public class Main {
         ArrayList<Integer> randomList = new ArrayList<>();
         Random rand = new Random();
         for (int i = 1; i <= amount; i++){
-            randomList.add(rand.nextInt(max + 1));
+            randomList.add(rand.nextInt(max) +1);
         }
         return randomList;
     }
